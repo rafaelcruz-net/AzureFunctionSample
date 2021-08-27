@@ -1,8 +1,0 @@
-{
-  "profiles": {
-    "AzFuncPostTodos": {
-      "commandName": "Project",
-      "commandLineArgs": "host start --pause-on-error"
-    }
-  }
-}
