@@ -20,7 +20,7 @@ namespace AzFuncGetTodos
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            Guid id = new Guid(req.Query["id"]);
+            int id = Convert.ToInt32(req.Query["id"]);
 
             var repository = new TodoItemRepository();
 

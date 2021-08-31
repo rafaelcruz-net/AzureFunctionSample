@@ -30,9 +30,7 @@ namespace AzFuncGetTodos
 
             var repository = new TodoItemRepository();
 
-            data.Id = Guid.NewGuid();
-
-            repository.Save(data);
+            data.Id = repository.Save(data);
 
             return new CreatedResult("", data);
         }

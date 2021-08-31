@@ -6,7 +6,7 @@ namespace Infra.Model
 {
     public class TodoItem
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public String AssignedFor { get; set; }
         public State Status { get; set; }
         public string Name { get; set; }
