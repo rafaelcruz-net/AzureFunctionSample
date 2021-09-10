@@ -28,9 +28,12 @@ namespace AzFuncGetTodos
             if (data == null)
                 return new BadRequestObjectResult(new { message = "Dados para criação de uma tarefa é obrigatoria" });
 
-            var repository = new TodoItemRepository();
 
-            data.Id = repository.Save(data);
+            var repository = new TodoItemRepositoryCosmosDb();
+
+            data.Id = Guid.NewGuid().ToString();
+
+            await repository.Save(data);
 
             return new CreatedResult("", data);
         }

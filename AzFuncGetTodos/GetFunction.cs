@@ -20,7 +20,7 @@ namespace AzFuncGetTodos
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            var repository = new TodoItemRepository();
+            var repository = new TodoItemRepositoryCosmosDb();
 
             return new OkObjectResult(repository.GetAll());
 

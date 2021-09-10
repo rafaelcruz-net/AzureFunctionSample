@@ -20,11 +20,11 @@ namespace AzFuncGetTodos
         {
             log.LogInformation("C# HTTP trigger function processed a request.");
 
-            int id = Convert.ToInt32(req.Query["id"]);
+            Guid id = new Guid(req.Query["id"]);
 
-            var repository = new TodoItemRepository();
+            var repository = new TodoItemRepositoryCosmosDb();
 
-            var todo = repository.GetById(id);
+            var todo = repository.GetById(id.ToString());
 
             if (todo == null)
                 return new NotFoundObjectResult(new { message = "Não encontrei a Tarefa" });
